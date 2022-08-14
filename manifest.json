@@ -1,0 +1,37 @@
+{
+
+    "manifest_version": 2,
+    "name": "Comic-Sans, YAY!",
+    "version": "1.0",
+  
+    "description": "Changes all Fonts into Comic Sans MS with Ctrl+Shift+Alt+C and reset it wit Ctrl+Shift+Alt+X",
+
+    "background": {
+      "scripts": ["backgroundscript.js"]
+    },
+
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["contentscript.js"]
+      }
+    ],
+    "icons": {
+      "128": "icons/icon128.png",
+      "96": "icons/icon96.png",
+      "48": "icons/icon48.png"
+    },
+
+    "browser_action": {
+      "default_icon": {
+        "32": "icons/poop.svg"
+      }
+    },
+
+    "permissions": [
+      "activeTab",
+      "storage"
+    ]
+  
+  }
+  
