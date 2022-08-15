@@ -9,7 +9,6 @@ function improve_webpage(on) {
         // document.getElementsByTagName("body")[0].style.fontFamily = "";
         document.querySelectorAll("*:not(:empty)").forEach((el) => {el.style.fontFamily = ""})
     }
-    document.body.style.border = '8px solid green';
 
 }
 
@@ -61,6 +60,13 @@ window.addEventListener("keydown", function(evt) {
 
 window.onload = function() {
     console.log("window wurde angeladen");
-    improve_webpage(onoff);
-};
+    browser.storage.local.get("comicsansyay").then(onGot, onError);
+    
+        console.log("Storage changed:", changes);
+    
 
+    
+        console.log("Current:", changes.comicsansyay.newValue.aktief);
+    
+        improve_webpage(changes.comicsansyay.newValue.aktief);
+}
